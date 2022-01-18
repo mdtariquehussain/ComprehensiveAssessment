@@ -1,0 +1,23 @@
+<h2 class="display-6">Appointments List</h2>
+<table class="table  table-striped ">
+    <thead class="table-dark">
+      <tr>
+        <th scope="col">Appointment ID</th>
+        <th scope="col">Patient Name</th>
+        <th scope="col">Doctor Name</th>
+        <th scope="col">Appointment Date</th>
+        <th scope="col">Prescription</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let d of appointments">
+            <th scope="row">{{d.appointmentId}}</th>
+            <td>{{d.patientName}} </td>
+            <td>{{d.doctorName}} </td>
+            <td>{{d.visitDate}} </td>
+            <td>{{d.prescription}} </td>
+            
+        </tr>
+    
+    </tbody>
+</table>

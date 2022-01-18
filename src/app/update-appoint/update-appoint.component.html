@@ -1,0 +1,15 @@
+<div>
+    <form #update="ngForm" (ngSubmit)="onSubmit(update)"> 
+          <div class="input-group">
+            <span class="input-group-text col-2">Appointment Id</span>
+            <input type="text" class="form-control" name="id" ngModel>
+        </div><br>
+        <div class="input-group">
+            <span class="input-group-text col-2">Update Prescription</span>
+            <input type="text" class="form-control" name="s" ngModel>
+        </div><br>
+            <input type="submit" class="btn btn-success ">
+            
+    </form>
+    
+</div>

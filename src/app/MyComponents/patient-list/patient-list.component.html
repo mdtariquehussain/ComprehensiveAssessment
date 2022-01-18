@@ -1,0 +1,22 @@
+<h2 class="display-6">Patients List</h2>
+<table class="table  table-striped">
+    <thead class="table-dark">
+      <tr>
+        <th scope="col">Patient ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Age</th>
+        <th scope="col">Gender</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+    <tr *ngFor="let d of patients">
+        <th scope="row">{{d.patientId}}</th>
+        <td>{{d.patientName}} </td>
+        <td>{{d.patientAge}} </td>
+        <td>{{d.patientGender}} </td>
+
+    </tr>
+    </tbody>
+</table>
+

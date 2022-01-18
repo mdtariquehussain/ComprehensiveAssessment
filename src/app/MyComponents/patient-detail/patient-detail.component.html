@@ -1,0 +1,57 @@
+<form #myForm="ngForm" (ngSubmit)="onSubmit(myForm)">
+    <div class="container mb-3 col-3 text-center">
+      <label class="form-label">Patient Id</label>
+      <input type="text" class="form-control " ngModel name="id" ><br>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+</form> <br>
+<div *ngIf="x!=null">
+    <div class="container mb-3">
+        <div *ngIf="patient!=null; else elseBlock">
+            <h3>Patient Detail</h3>
+            <table class="table">
+                <tr>
+                    <th scope="row">Patient Id</th>
+                    <td>{{patient.patientId}}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Patient Name</th>
+                    <td>{{patient.patientName}}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Patient Age</th>
+                    <td>{{patient.patientAge}}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Patient Gender</th>
+                    <td>{{patient.patientGender}}</td>
+                </tr>
+            </table>
+                      
+            <div *ngIf="booking!=1; else elseBlock2"> 
+                <button type="button" class="btn btn-primary" (click)="onClick()">
+                    Book Appointment</button>
+            </div>
+            <ng-template #elseBlock2>
+                <div>
+                    <h4>Book Your Appointment </h4>
+                    <form #newApp="ngForm" (ngSubmit)="book(newApp)">
+                        <div class="container mb-3 col-3 text-center">
+                            <label class="form-label">Date</label>
+                            <input type="date" class="form-control " ngModel name="visitDate" ><br>
+                            <select class="form-select" ngModel name="doctorName">
+                                <option *ngFor="let d of doctors" value={{d.doctorId}}>{{d.doctorName}}-{{d.specialistField}}</option>
+                              </select><br>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                          </div>
+                    </form>
+                </div>
+            </ng-template>
+            
+        </div>
+
+        <ng-template #elseBlock>No Patient Details Found</ng-template><br>
+
+        
+    </div>
+</div>
